@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Campaign;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
 class CampaignController extends ApiController
