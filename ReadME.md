@@ -1,7 +1,34 @@
-Advertisement API application with symfony, React, Docker
+Advertisement API application with symfony, React, Docker and Sqlite
 =======
 
-A demo project for Advertisement API with symfony 4.2, Sqlite, Doctrine, React
+A demo project for Advertisement API with symfony 4.2, Doctrine, React and sample data in Sqlite database
+
+How to run
+-------------
+#### Pre-prerequisites ####
+```
+PHP > 7.2
+NPM
+composer
+Docker
+```
+
+#### With Symfony console  ####
+```
+Clone the Repository 
+cd to project directory
+Run command "composer install"
+Run command "php bin/console server:run"
+Check http://localhost:8000/
+```
+#### With docker  ####
+```
+Clone the Repository 
+cd to project directory
+Run command "composer install"
+Run command "docker-compose up"
+Check http://localhost:8000/
+```
 
 SQL queries:
 -------
@@ -14,6 +41,9 @@ WHERE c.advertiser_id = 100
 GROUP BY c.id
 HAVING numberOfAds > 50
 ```
+http://localhost:8000/campaign/100/50  
+run the app to see the test url
+
 ### showing all campaigns that do not have any ads ###
 ```
 SELECT c.id as campaignID, c.name AS campaignName , count(a.campaign_id) AS numberOfAds
@@ -23,6 +53,8 @@ ON (c.id = a.campaign_id)
 GROUP BY c.id
 HAVING numberOfAds = 0
 ```
+http://localhost:8000/campaign/withoutad
+run the app to see the test url
 
 API
 -------
@@ -110,32 +142,5 @@ No server implementation of this functionality
 
 Device Detection 
 ------------
-run the symfony app to see this function on home Url 
+Run the symfony app to see this functionality on home Url 
 http://localhost:8000/
-
-How to run
--------------
-#### Pre-prerequisites ####
-```
-PHP > 7.2
-NPM
-composer
-Docker
-```
-
-#### With Symfony console  ####
-```
-Clone the Repository 
-cd to project directory
-Run command "composer install"
-Run command "php bin/console server:run"
-Check http://localhost:8000/
-```
-#### With docker  ####
-```
-Clone the Repository 
-cd to project directory
-Run command "composer install"
-Run command "docker-compose up"
-Check http://localhost:8000/
-```
