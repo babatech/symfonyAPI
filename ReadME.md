@@ -131,7 +131,7 @@ Run command "composer install"
 Run command "php bin/console server:run"
 Check http://localhost:8000/
 ```
-#### With docker (in progress)   ####
+#### With docker  ####
 ```
 Clone the Repository 
 cd to project directory
