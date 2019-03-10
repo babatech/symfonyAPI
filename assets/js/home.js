@@ -69,6 +69,11 @@ export default class Home extends React.Component {
                     <h4>API</h4>
                     <p>
                         <b>selecting a specific ad</b><br/>
+                        <p>
+                            SELECT a.id, a.title, a.text, a.image, a.sponsored_by, a.tracking_url from ads a WHERE a.id=5<br/>
+                            <a href="http://localhost:8000/ad/2" target="_blank">http://localhost:8000/ad/2</a><br/>
+                            <span>run the app to see the test url</span>
+                        </p>
 
                         <b>selecting all ads of a specific campaign</b><br/>
 

@@ -29,7 +29,7 @@ class AdsController extends ApiController
      */
     public function adByIDAction($adID)
     {
-        $ad = $this->getDoctrine()->getRepository(Ads::class)->find($adID);
+        $ad = $this->getDoctrine()->getRepository(Ads::class)->findByID($adID);
         return $this->respond($ad);
     }
 }

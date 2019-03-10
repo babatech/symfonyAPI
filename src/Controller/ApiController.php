@@ -14,7 +14,6 @@ class ApiController extends AbstractController
 
     /**
      * Gets the value of statusCode.
-     *
      * @return integer
      */
     public function getStatusCode()
@@ -24,9 +23,7 @@ class ApiController extends AbstractController
 
     /**
      * Sets the value of statusCode.
-     *
      * @param integer $statusCode the status code
-     *
      * @return self
      */
     protected function setStatusCode($statusCode)
@@ -38,11 +35,9 @@ class ApiController extends AbstractController
 
     /**
      * Returns a JSON response
-     *
      * @param array $data
      * @param array $headers
-     *
-     * @return Symfony\Component\HttpFoundation\JsonResponse
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function respond($data, $headers = [])
     {
@@ -51,10 +46,9 @@ class ApiController extends AbstractController
 
     /**
      * Sets an error message and returns a JSON response
-     *
      * @param string $errors
-     *
-     * @return Symfony\Component\HttpFoundation\JsonResponse
+     * @param array $headers
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function respondWithErrors($errors, $headers = [])
     {
@@ -67,10 +61,9 @@ class ApiController extends AbstractController
 
     /**
      * Sets an success message and returns a JSON response
-     *
      * @param string $success
-     *
-     * @return Symfony\Component\HttpFoundation\JsonResponse
+     * @param array $headers
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function respondWithSuccess($success, $headers = [])
     {
@@ -83,10 +76,8 @@ class ApiController extends AbstractController
 
     /**
      * Returns a 401 Unauthorized http response
-     *
      * @param string $message
-     *
-     * @return Symfony\Component\HttpFoundation\JsonResponse
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public function respondUnauthorized($message = 'Not authorized!')
     {

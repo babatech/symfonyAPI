@@ -15,11 +15,18 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  */
 class CampaignRepository extends ServiceEntityRepository
 {
+    /**
+     * CampaignRepository constructor.
+     * @param RegistryInterface $registry
+     */
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Campaign::class);
     }
 
+    /**
+     * @return mixed
+     */
     public function findAllCampaignWithOutAds()
     {
         return $this->createQueryBuilder('c')
@@ -31,6 +38,12 @@ class CampaignRepository extends ServiceEntityRepository
             ;
     }
 
+    /**
+     *
+     * @param $advertiserID
+     * @param $numberOfAds
+     * @return mixed
+     */
     public function findCampaignWithAdvertiserIDAndNumberOfAds($advertiserID,$numberOfAds )
     {
 
@@ -44,5 +57,22 @@ class CampaignRepository extends ServiceEntityRepository
                 ->getQuery()
                 ->getResult()
             ;
+    }
+
+    /**
+     * find campaign By ID
+     * @param $campaignID
+     * @return mixed
+     */
+    public function findByID($campaignID)
+    {
+        return $this->createQueryBuilder('c')
+            ->select('c.id,c.name, count(ads.campaignID) as TotalAds')
+            ->leftJoin(Ads::class, 'ads',  \Doctrine\ORM\Query\Expr\Join::WITH, 'c.id =ads.campaignID ')
+            ->where('c.id = :campaignID')
+            ->setParameter('campaignID', $campaignID)
+            ->groupBy('c.id')
+            ->getQuery()
+            ->getResult();
     }
 }

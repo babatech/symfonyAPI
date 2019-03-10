@@ -8,6 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class CampaignController extends ApiController
 {
     /**
+     * @return \Symfony\Component\HttpFoundation\Response
      * @Route("/campaign", name="campaign")
      */
     public function index()
@@ -18,6 +19,7 @@ class CampaignController extends ApiController
     }
 
     /**
+     * @return Symfony\Component\HttpFoundation\JsonResponse
      * @Route("/campaign/withoutad", name="campaignwithoutad")
      */
     public function campaignWithOutAdAction()
@@ -29,6 +31,9 @@ class CampaignController extends ApiController
     }
 
     /**
+     * @param $advertiserID
+     * @param $numberOfAds
+     * @return Symfony\Component\HttpFoundation\JsonResponse
      * @Route("/campaign/{advertiserID}/{numberOfAds}", name="campaignWithAdvertiserIDAndNumberOfAds")
      */
     public function campaignWithAdvertiserIDAndNumberOfAdsAction($advertiserID,$numberOfAds)
