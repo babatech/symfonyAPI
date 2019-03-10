@@ -10,7 +10,7 @@ export default class API extends React.Component {
             <div className={"col-md-12"}>
                 <div className="jumbotron">
                     <h3 className="display-5">API:</h3>
-                    <b>selecting a specific ad</b><br/>
+                    <b  className={"text-primary"}>selecting a specific ad</b><br/>
                     <p>
                         <b>Protocol: </b> HTTP <br/>
                         <b>Method: </b> GET <br/>
@@ -21,10 +21,10 @@ export default class API extends React.Component {
                             &#125;
                         </code><br/><br/>
                         <a href="http://localhost:8000/ad/2" target="_blank">http://localhost:8000/ad/2</a><br/>
-                        <span>run the app to see the test url</span>
+                        <span className={"text-danger"}>run the app to see the test url</span>
                     </p>
 
-                    <b>selecting all ads of a specific campaign</b><br/>
+                    <b className={"text-primary"}>selecting all ads of a specific campaign</b><br/>
                     <p>
                         <b>Protocol: </b> HTTP <br/>
                         <b>Method: </b> GET <br/>
@@ -35,9 +35,9 @@ export default class API extends React.Component {
                             &#125;
                         </code><br/><br/>
                         <a href="http://localhost:8000/campaign/100" target="_blank">http://localhost:8000/campaign/100</a><br/>
-                        <span>run the app to see the test url</span>
+                        <span className={"text-danger"}>run the app to see the test url</span>
                     </p>
-                    <b>selecting all ads of a specific advertiser</b><br/>
+                    <b className={"text-primary"}>selecting all ads of a specific advertiser</b><br/>
                     <p>
                         <b>Protocol: </b> HTTP <br/>
                         <b>Method: </b> GET <br/>
@@ -48,9 +48,9 @@ export default class API extends React.Component {
                             &#125;
                         </code><br/><br/>
                         <a href="http://localhost:8000/advertiser/listads/80" target="_blank">http://localhost:8000/advertiser/listads/80</a><br/>
-                        <span>run the app to see the test url</span>
+                        <span className={"text-danger"}>run the app to see the test url</span>
                     </p>
-                    <b>creating an ad</b><br/>
+                    <b className={"text-primary"}>creating an ad</b><br/>
                     <p>
                         <b>Protocol: </b> HTTP <br/>
                         <b>Method: </b> POST <br/>
@@ -68,10 +68,10 @@ export default class API extends React.Component {
                             &nbsp;&#125;<br/>
                             &#125;
                         </code><br/>
-                        <span>No server implementation of this functionality</span>
+                        <span className={"text-danger"}>No server implementation of this functionality</span>
                     </p>
 
-                    <b>modifying a specific ad</b><br/>
+                    <b  className={"text-primary"}>modifying a specific ad</b><br/>
                     <p>
                         <b>Protocol: </b> HTTP <br/>
                         <b>Method: </b> PUT <br/>
@@ -90,7 +90,7 @@ export default class API extends React.Component {
                             &nbsp;&#125;<br/>
                             &#125;<br/>
                         </code><br/>
-                        <span>No server implementation of this functionality</span>
+                        <span className={"text-danger"}>No server implementation of this functionality</span>
                     </p>
                 </div>
             </div>

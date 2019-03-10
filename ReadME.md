@@ -2,8 +2,10 @@ Advertisement API application with symfony, React, Docker
 =======
 
 A demo project for Advertisement API with symfony 4.2, Sqlite, Doctrine, React
-##SQL queries:
-###showing all campaigns of advertiser #100 that have more than 50 ads
+
+SQL queries:
+-------
+### showing all campaigns of advertiser #100 that have more than 50 ads ###
 ```
 SELECT c.name, count(a.campaign_id) AS numberOfAds
 FROM campaign c
@@ -12,7 +14,7 @@ WHERE c.advertiser_id = 100
 GROUP BY c.id
 HAVING numberOfAds > 50
 ```
-###showing all campaigns that do not have any ads
+###showing all campaigns that do not have any ads ###
 ```
 SELECT c.id as campaignID, c.name AS campaignName , count(a.campaign_id) AS numberOfAds
 FROM campaign c
@@ -22,9 +24,9 @@ GROUP BY c.id
 HAVING numberOfAds = 0
 ```
 
-##API
-
-##selecting a specific ad
+API
+-------
+### selecting a specific ad ###
 
 Protocol: HTTP  
 Method: GET  
@@ -37,7 +39,7 @@ RequestBody:
 http://localhost:8000/ad/2  
 run the app to see the test url
 
-##selecting all ads of a specific campaign
+### selecting all ads of a specific campaign ###
 
 Protocol: HTTP  
 Method: GET  
@@ -50,7 +52,7 @@ RequestBody:
 http://localhost:8000/campaign/100  
 run the app to see the test url
 
-##selecting all ads of a specific advertiser
+### selecting all ads of a specific advertiser ###
 
 Protocol: HTTP  
 Method: GET  
@@ -63,7 +65,7 @@ RequestBody:
 http://localhost:8000/advertiser/listads/80  
 run the app to see the test url
 
-##creating an ad
+### creating an ad ###
 
 Protocol: HTTP  
 Method: POST  
@@ -84,7 +86,7 @@ RequestBody:
 ```
 No server implementation of this functionality
 
-###modifying a specific ad
+### modifying a specific ad  ###
 
 Protocol: HTTP
 Method: PUT
@@ -106,12 +108,14 @@ RequestBody:
 ```
 No server implementation of this functionality
 
-##Device Detection
+Device Detection 
+------------
 run the symfony app to see this function on home Url 
 http://localhost:8000/
 
-# How to run
-#### Pre-prerequisites
+How to run
+-------------
+#### Pre-prerequisites ####
 ```
 PHP > 7.2
 NPM
@@ -119,7 +123,7 @@ composer
 Docker
 ```
 
-#### With Symfony console 
+#### With Symfony console  ####
 ```
 Clone the Repository 
 cd to project directory
@@ -127,7 +131,7 @@ Run command "composer install"
 Run command "php bin/console server:run"
 Check http://localhost:8000/
 ```
-#### With docker (in progress)
+#### With docker (in progress)   ####
 ```
 Clone the Repository 
 cd to project directory
