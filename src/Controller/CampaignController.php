@@ -19,7 +19,7 @@ class CampaignController extends ApiController
     }
 
     /**
-     * @return Symfony\Component\HttpFoundation\JsonResponse
+     * @return /Symfony\Component\HttpFoundation\JsonResponse
      * @Route("/campaign/withoutad", name="campaignwithoutad")
      */
     public function campaignWithOutAdAction()
@@ -33,7 +33,7 @@ class CampaignController extends ApiController
     /**
      * @param $advertiserID
      * @param $numberOfAds
-     * @return Symfony\Component\HttpFoundation\JsonResponse
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      * @Route("/campaign/{advertiserID}/{numberOfAds}", name="campaignWithAdvertiserIDAndNumberOfAds")
      */
     public function campaignWithAdvertiserIDAndNumberOfAdsAction($advertiserID,$numberOfAds)
@@ -41,6 +41,18 @@ class CampaignController extends ApiController
         $campaigns = $this->getDoctrine()->getRepository(Campaign::class)->findCampaignWithAdvertiserIDAndNumberOfAds($advertiserID,$numberOfAds);
         return $this->respond([
             $campaigns
+        ]);
+    }
+
+    /**
+     * @param $campaignID
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     * @Route("/campaign/{campaignID}", name="campaignByID")
+     */
+    public function campaignByID($campaignID){
+        $campaign = $this->getDoctrine()->getRepository(Campaign::class)->findByID($campaignID);
+        return $this->respond([
+            $campaign
         ]);
     }
 }
