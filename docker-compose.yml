@@ -3,7 +3,7 @@ services:
 
     webserver:
       image: nginx:alpine
-      container_name: symfonyreact-webserver
+      container_name: symfonyAPI-webserver
       working_dir: /application
       volumes:
           - .:/application
@@ -13,7 +13,7 @@ services:
 
     php-fpm:
       build: phpdocker/php-fpm
-      container_name: symfonyreact-php-fpm
+      container_name: symfonyAPI-php-fpm
       working_dir: /application
       volumes:
         - .:/application

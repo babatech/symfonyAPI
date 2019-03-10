@@ -7,8 +7,7 @@ import {
     osName,
     browserName,
     browserVersion,
-    getUA,
-    deviceDetect
+    getUA
 } from "react-device-detect";
 export default class DetectDevice extends React.Component {
     constructor(){
@@ -16,21 +15,20 @@ export default class DetectDevice extends React.Component {
     }
 
     render() {
-
         return (
             <p >
                 <BrowserView><b>Device: </b>Desktop</BrowserView>
                 <TabletView><b>Device: </b>Tablet</TabletView>
                 <MobileOnlyView><b>Device: </b>Mobile</MobileOnlyView>
+
                 <b>OS: </b>
                 {osName} {osVersion}<br/>
 
                 <b>Browser: </b>
                 {browserName} {browserVersion}<br/>
+
                 <b>User Agent: </b>
                 {getUA}<br/>
-                <b>oject: </b>
-                {deviceDetect}<br/>
             </p>
         );
     }
