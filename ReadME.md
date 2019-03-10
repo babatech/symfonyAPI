@@ -14,7 +14,7 @@ WHERE c.advertiser_id = 100
 GROUP BY c.id
 HAVING numberOfAds > 50
 ```
-###showing all campaigns that do not have any ads ###
+### showing all campaigns that do not have any ads ###
 ```
 SELECT c.id as campaignID, c.name AS campaignName , count(a.campaign_id) AS numberOfAds
 FROM campaign c
